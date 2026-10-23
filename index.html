@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,viewport-fit=cover" />
+<meta name="theme-color" content="#030404" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<title>THE HOLLOW BELOW — HARD FIX</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<canvas id="game" aria-label="The Hollow Below game canvas"></canvas>
+<div id="fxNoise"></div><div id="fxVignette"></div>
+
+<section id="titleScreen" class="screen active">
+  <div class="titleWrap">
+    <div class="eyebrow">BLACKRIDGE ANNEX • NIGHT SHIFT • 03:17</div>
+    <h1>THE HOLLOW<br><span>BELOW</span></h1>
+    <p class="tagline">Eight sublevels. One elevator. Something learned the sound of your footsteps.</p>
+    <div class="menuRow"><button id="newBtn">NEW SHIFT</button><button id="continueBtn" class="secondary" disabled>CONTINUE</button></div>
+    <div id="loadStatus" class="loadStatus">Loading textures and audio…</div>
+    <div class="controls">WASD move · mouse / drag look · E interact / hide · F flashlight · Shift sprint · J journal · Esc pause</div>
+    <div class="warning">HEADPHONES RECOMMENDED • sudden sound • flashing lights • intense horror</div>
+  </div>
+</section>
+
+<section id="pauseScreen" class="screen compact"><div class="panel"><div class="eyebrow">SHIFT PAUSED</div><h2>YOU CAN STILL HEAR IT.</h2><button id="resumeBtn">GO BACK</button><button id="menuBtn" class="secondary">SAVE & TITLE</button></div></section>
+<section id="deathScreen" class="screen compact"><div class="panel death"><div class="eyebrow">BLACKRIDGE INCIDENT REPORT</div><h2>IT FOUND YOU.</h2><p id="deathText">You were too loud.</p><button id="retryBtn">RELOAD CHECKPOINT</button></div></section>
+<section id="endingScreen" class="screen compact"><div class="panel ending"><div class="eyebrow">06:41 • SURFACE LEVEL</div><h2>THE DOORS CLOSED.</h2><p id="endingText"></p><button id="againBtn">NEW SHIFT</button></div></section>
+
+<section id="chapterCard" class="chapterCard"><div id="chapterKicker">CHAPTER I</div><h3 id="chapterTitle">THE INTAKE</h3><p id="chapterDesc"></p></section>
+<section id="journal" class="overlayPanel"><div class="journalInner"><div class="journalHeader"><div><span>FIELD JOURNAL</span><small id="journalChapter"></small></div><button id="journalClose">×</button></div><div id="journalObjective" class="journalObjective"></div><div class="journalGrid"><div><h4>FOUND</h4><div id="journalFound"></div></div><div><h4>NOTES</h4><div id="journalNotes"></div></div></div></div></section>
+
+<div id="mobileUI">
+  <div id="stick"><div id="nub"></div></div><div id="lookZone"></div>
+  <button id="interactBtn">USE</button><button id="flashBtn">LIGHT</button><button id="runBtn">RUN</button><button id="journalBtn">J</button>
+</div>
+<script src="game.js"></script>
+</body>
+</html>
